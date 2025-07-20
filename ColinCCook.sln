@@ -9,6 +9,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ColinCCook.AppHost.AppHost"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ColinCCook.AppHost.ServiceDefaults", "ColinCCook.AppHost.ServiceDefaults\ColinCCook.AppHost.ServiceDefaults.csproj", "{26C2ABC2-3CAF-4EC4-98B4-DD1C3414D797}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ColinCCook.AppHost.AppHost.IntegrationTests", "ColinCCook.AppHost.AppHost.IntegrationTests\ColinCCook.AppHost.AppHost.IntegrationTests.csproj", "{7E4097DC-5E7A-4F82-AF11-326B3FBE29D3}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -55,6 +57,18 @@ Global
 		{26C2ABC2-3CAF-4EC4-98B4-DD1C3414D797}.Release|x64.Build.0 = Release|Any CPU
 		{26C2ABC2-3CAF-4EC4-98B4-DD1C3414D797}.Release|x86.ActiveCfg = Release|Any CPU
 		{26C2ABC2-3CAF-4EC4-98B4-DD1C3414D797}.Release|x86.Build.0 = Release|Any CPU
+		{7E4097DC-5E7A-4F82-AF11-326B3FBE29D3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7E4097DC-5E7A-4F82-AF11-326B3FBE29D3}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7E4097DC-5E7A-4F82-AF11-326B3FBE29D3}.Debug|x64.ActiveCfg = Debug|Any CPU
+		{7E4097DC-5E7A-4F82-AF11-326B3FBE29D3}.Debug|x64.Build.0 = Debug|Any CPU
+		{7E4097DC-5E7A-4F82-AF11-326B3FBE29D3}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{7E4097DC-5E7A-4F82-AF11-326B3FBE29D3}.Debug|x86.Build.0 = Debug|Any CPU
+		{7E4097DC-5E7A-4F82-AF11-326B3FBE29D3}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7E4097DC-5E7A-4F82-AF11-326B3FBE29D3}.Release|Any CPU.Build.0 = Release|Any CPU
+		{7E4097DC-5E7A-4F82-AF11-326B3FBE29D3}.Release|x64.ActiveCfg = Release|Any CPU
+		{7E4097DC-5E7A-4F82-AF11-326B3FBE29D3}.Release|x64.Build.0 = Release|Any CPU
+		{7E4097DC-5E7A-4F82-AF11-326B3FBE29D3}.Release|x86.ActiveCfg = Release|Any CPU
+		{7E4097DC-5E7A-4F82-AF11-326B3FBE29D3}.Release|x86.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
