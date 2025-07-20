@@ -12,15 +12,22 @@ This prototype demonstrates how an Aspire run service, or Docker container, can 
 
 <img width="3587" height="1382" alt="image" src="https://github.com/user-attachments/assets/9c3f46b3-d39f-4d44-86a2-164819dfdb90" />
 
-## Getting Started
+### Step 1: The consumer hits the web project `ColinCCook.AspireRunService`
 
-### Running the prototype
+Step 1a: The consumer can either call `/direct-request`, which is intended for the web project to try to call `http://barservice.colin` directly.
+
+Step 1b: Or it can call `/via-container`, which calls a `mockservice` container for it to proxy to `http://barservice.colin` instead.
+
+### Step 2: Resolving `http://barservice.colin`
+
+
+## Running the prototype yourself
 
 - Make sure your hosts file is set up to route requests for "barservice.colin", see below for instructions
 - Run docker-compose up /docker-compose/docker-compose.yaml
 - Run the Aspire hosted ColinCCook.AppHost.AppHost. 
 
-### Observations
+## Dev evidence
 
 ## Setting hosts file macOS
 
