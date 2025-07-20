@@ -21,6 +21,7 @@ public class AspireRunServiceTests
         var response = await httpClient.GetAsync("/direct-request");
 
         // Assert
+        // If this fails, make sure you're running the docker-compose first and edit your hosts file as per the README.md
         Assert.That(response.StatusCode, Is.EqualTo(HttpStatusCode.Accepted));
     }
 
@@ -43,6 +44,7 @@ public class AspireRunServiceTests
         var response = await httpClient.GetAsync("/via-container");
 
         // Assert
+        // If this fails, make sure you're running the docker-compose first and edit your hosts file as per the README.md
         Assert.That(response.StatusCode, Is.EqualTo(HttpStatusCode.Created));
     }
 }
