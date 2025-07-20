@@ -1,0 +1,26 @@
+version: '3.8'
+
+services:
+  nginx:
+    image: nginx:latest
+    volumes:
+      - ./nginx/nginx.conf:/etc/nginx/conf.d/default.conf
+    ports:
+      - "80:80"
+    networks:
+      - docker-compose-network
+
+  mockservice:
+    image: mockserver/mockserver:latest
+    volumes:
+     - ./mockserver/expectation.json:/config/expectation.json
+    ports:
+      - "1080:1080"
+    environment:
+      - MOCKSERVER_INITIALIZATION_JSON_PATH=/config/expectation.json
+    networks:
+      - docker-compose-network
+
+networks:
+  docker-compose-network:
+    driver: bridge

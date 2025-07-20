@@ -1,0 +1,17 @@
+[
+    {
+        "httpRequest": {
+            "method": "GET",
+            "path": "/foo"
+        },
+        "httpForward": {
+            "host": "barservice.colin",
+            "port": 80,
+            "scheme": "HTTP",
+            "path": "/bar"
+        },
+        "times": {
+            "unlimited": true
+        }
+    }
+]
