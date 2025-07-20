@@ -10,7 +10,7 @@ This prototype demonstrates how an Aspire run service, or Docker container, can 
 
 ## Diagram
 
-[Placeholder diagram]
+<img width="3587" height="1382" alt="image" src="https://github.com/user-attachments/assets/9c3f46b3-d39f-4d44-86a2-164819dfdb90" />
 
 ## Getting Started
 
