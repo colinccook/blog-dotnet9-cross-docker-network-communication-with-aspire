@@ -1,20 +1,12 @@
-# [Title Placeholder]
+# Cross Docker network communication with Aspire
 
-[Description placeholder]
+My workplace has a docker-compose file with its own network and dozens of services. It represents the fundamental behaviour of our distributed application, and I can't change it.
 
-## Project Structure
+I wanted to experiment with Aspire at work to host our team's infrastructure and I wondered if it was possible for them to communicate in the way I needed.
 
-```
-/docker-compose               # Files for docker-compose and containers
-├── /nginx
-│   └── nginx.conf            # Maps hostname to mockserver
-└── /mockserver
-    └── expectation.json      # Expecation for mockserver to respond
-└── docker-compose.yaml       # Run the two containers on special network
-/ColinCCook.AppHost.AppHost   # Aspire project to run a single Csharp service
-/ColinCCook.AspireRunService  # The CSharp service that wants to hit mockserver
-/README.md                    # You are here!
-```
+In short, it is.
+
+This prototype demonstrates how an Aspire run service, or Docker container, can hit a Docker container run in parallel with docker-compose.
 
 ## Diagram
 
