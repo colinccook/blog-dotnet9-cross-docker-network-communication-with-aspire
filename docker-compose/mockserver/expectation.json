@@ -2,10 +2,22 @@
     {
         "httpRequest": {
             "method": "GET",
+            "path": "/foo"
+        },
+        "httpResponse": {
+            "statusCode": 201
+        },
+        "times": {
+            "unlimited": true
+        }
+    },
+    {
+        "httpRequest": {
+            "method": "GET",
             "path": "/bar"
         },
         "httpResponse": {
-            "statusCode": 200
+            "statusCode": 202
         },
         "times": {
             "unlimited": true

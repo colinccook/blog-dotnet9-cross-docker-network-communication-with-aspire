@@ -1,5 +1,4 @@
 var builder = WebApplication.CreateBuilder(args);
-var app = builder.Build();
 
 builder.AddServiceDefaults();
 
@@ -13,19 +12,26 @@ builder.Services.AddHttpClient("barservice.colin", httpClient =>
     httpClient.BaseAddress = new("http://barservice.colin");
 });
 
+builder.Services.AddEndpointsApiExplorer();
+builder.Services.AddSwaggerGen();
 
-app.MapGet("/via-container", (IHttpClientFactory httpClientFactory) =>
+var app = builder.Build();
+
+app.MapGet("/via-container", async (IHttpClientFactory httpClientFactory) =>
 {
-    var otherNetworkedContainerClient = httpClientFactory.CreateClient("aspire-mockservice");
-    var result = otherNetworkedContainerClient.GetAsync("/foo");
-    return result;
+    var client = httpClientFactory.CreateClient("aspire-mockservice");
+    var result = await client.GetAsync("/foo");
+    return Results.StatusCode((int)result.StatusCode);
 });
 
-app.MapGet("/direct-request", (IHttpClientFactory httpClientFactory) =>
+app.MapGet("/direct-request", async (IHttpClientFactory httpClientFactory) =>
 {
-    var otherNetworkedContainerClient = httpClientFactory.CreateClient("barservice.colin");
-    var result = otherNetworkedContainerClient.GetAsync("/bar");
-    return result;
+    var client = httpClientFactory.CreateClient("barservice.colin");
+    var result = await client.GetAsync("/bar");
+    return Results.StatusCode((int)result.StatusCode);
 });
+
+app.UseSwagger();
+app.UseSwaggerUI();
 
 app.Run();
