@@ -20,14 +20,27 @@ Step 1b: Or it can call `/via-container`, which calls a `mockservice` container 
 
 ### Step 2: Resolving `http://barservice.colin`
 
+The hosts file of the development environment points `http://barservice.com` to itself.
+
+### Step 3: NGINX proxies calls to `http://barservice.com` to a another mockserver container
+
+This NGINX container has been run via the `docker-compose.yaml` file, and shares a network with another mockserver container.
+
+### Step 4: MockServer returns a Created/201 or Accepted/202, depending on the url.
+
+If called with `/foo` it returns a 201 (if the web service hit it directly). 
+
+If called with `/bar` it returns a 202 (via the proxy container in Aspire)
 
 ## Running the prototype yourself
 
-- Make sure your hosts file is set up to route requests for "barservice.colin", see below for instructions
-- Run docker-compose up /docker-compose/docker-compose.yaml
-- Run the Aspire hosted ColinCCook.AppHost.AppHost. 
+There are integration tests that confirm that Created/201 and Accepted/202 are correctly returned by the web service.
 
-## Dev evidence
+In order for them to be run successfully, or to run Aspire yourself, follow these steps:
+
+- Make sure your hosts file is set up to route requests for `barservice.colin`, see below for instructions
+- Docker compose up the `/docker-compose/docker-compose.yaml` file
+- Run the Aspire orchestration  `ColinCCook.AppHost.AppHost`, or, build and run the unit tests. 
 
 ## Setting hosts file macOS
 
